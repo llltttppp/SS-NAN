@@ -46,6 +46,14 @@ results:
 Pixel Accuracy:85.8   MeanAccuracy:58.1    MeanIOU:47.90
 
 
+Requirments:
+keras > 2.0.9
+tensorflow>1.3.0
+python =3.5.4
+* anaconda=5 (not neccessary just for convenient)
+
+
+
 
 Reference:
 
