@@ -1,8 +1,7 @@
 # SS-NAN
-keras implement of the paper Self-Supervised Neural Aggregation Networks for Human Parsing
+Keras implementation for the CVPR 2017 workshop paper [Self-Supervised Neural Aggregation Networks for Human Parsing](http://openaccess.thecvf.com/content_cvpr_2017_workshops/w19/papers/Zhao_Self-Supervised_Neural_Aggregation_CVPR_2017_paper.pdf)
 
-This code implement three kinds model for LIP dataset(Look into Person: Self-supervised Structure-sensitive Learning and A New
-Benchmark for Human Parsing)
+This code implement three kinds model for human parsing dataset LIP [Look into Person: Self-supervised Structure-sensitive Learning and A New Benchmark for Human Parsing](https://arxiv.org/abs/1703.05446)
 
 Data preparing:please download the LIP(single person train,val dataset, a baidu drive link is https://pan.baidu.com/s/1bpJcLjx ) and place a right place
 
