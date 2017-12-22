@@ -30,7 +30,8 @@ evalnum=0 uses the whole valset. A positive evalnum indicates the number of imag
 ### Test:
 
 run 
-```demo.py 
+```
+demo.py 
 ```
 to run test on some specific images (the main procedure is to call model.detect()) 
 
