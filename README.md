@@ -4,9 +4,10 @@ Keras implementation for the CVPR 2017 workshop paper [Self-Supervised Neural Ag
 This code implement three kinds model for human parsing dataset LIP [Look into Person: Self-supervised Structure-sensitive Learning and A New Benchmark for Human Parsing](https://arxiv.org/abs/1703.05446)
 
 ## Results:
-Pixel Accuracy: 85.8% 
-MeanAccuracy:   58.1%   
-MeanIoU:        47.90%
+
+| Pixel Accuracy | Mean Accuracy | Mean IoU |
+| -------------- |:-------------:| --------:|
+| 85.8%          | 58.1%         | 47.90%   |
 
 ## Requirments:
 keras 2.0.9
