@@ -1,7 +1,8 @@
 # SS-NAN
 Keras implementation for the CVPR 2017 workshop paper [Self-Supervised Neural Aggregation Networks for Human Parsing](http://openaccess.thecvf.com/content_cvpr_2017_workshops/w19/papers/Zhao_Self-Supervised_Neural_Aggregation_CVPR_2017_paper.pdf)
 
-This code implements three kinds model for human parsing dataset [LIP](https://arxiv.org/abs/1703.05446) (currently only re-implementation of the original SS-NAN method available)
+This code implements three kinds of models for human parsing dataset [LIP](https://arxiv.org/abs/1703.05446)  
+Currently only the re-implementation of the original SS-NAN method available.
 
 ## Results:
 
