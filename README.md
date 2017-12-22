@@ -3,13 +3,13 @@ Keras implementation for the CVPR 2017 workshop paper [Self-Supervised Neural Ag
 
 This code implement three kinds model for human parsing dataset LIP [Look into Person: Self-supervised Structure-sensitive Learning and A New Benchmark for Human Parsing](https://arxiv.org/abs/1703.05446)
 
-###Data Preparation
+##Data Preparation
 
 Please download the LIP(single person train, val dataset, a baidu drive link is https://pan.baidu.com/s/1bpJcLjx).
 
 Some codes are borrowed from the [MASK RCNN IMPLEMENTATION](https://github.com/matterport/Mask_RCNN)
 
-###Usage:
+##Usage:
 Evaluation
 '''
 python LIP.py evaluate --model path_to_model.h5  --dataset  dataset_path/Single_Person --evalnum 0 (0 for all valset,other number indicate the number of images use for evaluation)
