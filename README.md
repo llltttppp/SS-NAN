@@ -20,8 +20,6 @@ python 3.5.4
 
 Please download the [LIP dataset](https://pan.baidu.com/s/1bpJcLjx)
 
-Some codes are borrowed from the [MASK RCNN Implementation](https://github.com/matterport/Mask_RCNN)
-
 ## Usage:
 ### Evaluation
 ```
@@ -80,6 +78,9 @@ The final Pretrain_model can be downloaded [here](https://pan.baidu.com/s/1nvMMl
 
 
 ## References:
+
+Some codes are borrowed from the [MASK RCNN Implementation](https://github.com/matterport/Mask_RCNN)  
+
 ```
 @inproceedings{Gong2017Look,
   title={Look into Person: Self-Supervised Structure-Sensitive Learning and a New Benchmark for Human Parsing},
