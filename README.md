@@ -10,9 +10,9 @@ This code implement three kinds model for human parsing dataset LIP [Look into P
 | 85.8%          | 58.1%         | 47.90%   |
 
 ## Requirments:
-keras 2.0.9
-tensorflow 1.3.0
-python 3.5.4
+keras 2.0.9  
+tensorflow 1.3.0  
+python 3.5.4  
 * Anaconda=5 (not neccessary just for convenience)
 
 ## Data Preparation
@@ -43,44 +43,42 @@ python LIP.py train --model path_to_model.h5  --dataset  dataset_path/Single_Per
 3 kinds of trainmodes available: pretrain, finetune, or fintune_ssloss_withdeep, which correspond to the 3 steps introduced in the paper Self-Supervised Neural Aggregation Networks for Human Parsing
 
 Step1:
-download [pspnet_pretrainweights](https://pan.baidu.com/s/1sloikGH)
+download [pspnet_pretrainweights](https://pan.baidu.com/s/1sloikGH)  
+set the parameters of model.train()  
+```
+epochs=40,layers='all'   
+```
 run
 ```
 python LIP.py train --model pspnet  --dataset  dataset_path/Single_Person  trainmode pretrain
 ```
 
+Step2 :
 set the parameters of model.train()  
 ```
-epochs=40,layers='all'   
+epochs=30,layers='head'  
 ```
-
-Step2 :
 train the Neural Aggregation Networks
 ```
 python LIP.py train --model pretain.h5(the best model generated in step1 )  --dataset  dataset_path/Single_Person  trainmode 
 finetune
 ```
 
-set the parameters of model.train() 
-```
-epochs=30,layers='head'  
-```
-
 Step3 :
-train with Self-Supervised Loss
-```
-python LIP.py train --model finetune.h5(the best model generated in step2 )  --dataset  dataset_path/Single_Person  trainmode finetune_ssloss_withdeep
-```
-
 set the parameters of model.train()  
 ```
 epochs=30,layers='psp5+'
 ```
 
+train with Self-Supervised Loss
+```
+python LIP.py train --model finetune.h5(the best model generated in step2 )  --dataset  dataset_path/Single_Person  trainmode finetune_ssloss_withdeep
+```
+
 The final Pretrain_model can be downloaded [here](https://pan.baidu.com/s/1nvMMl0P)
 
 
-## Reference:
+## References:
 ```
 @inproceedings{Gong2017Look,
   title={Look into Person: Self-Supervised Structure-Sensitive Learning and a New Benchmark for Human Parsing},
