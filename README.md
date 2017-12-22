@@ -1,62 +1,85 @@
 # SS-NAN
-keras implement of the paper Self-Supervised Neural Aggregation Networks for Human Parsing
+Keras implementation for the CVPR 2017 workshop paper [Self-Supervised Neural Aggregation Networks for Human Parsing](http://openaccess.thecvf.com/content_cvpr_2017_workshops/w19/papers/Zhao_Self-Supervised_Neural_Aggregation_CVPR_2017_paper.pdf)
 
-This code implement three kinds model for LIP dataset(Look into Person: Self-supervised Structure-sensitive Learning and A New
-Benchmark for Human Parsing)
+This code implements three kinds model for human parsing dataset [LIP](https://arxiv.org/abs/1703.05446) (currently only re-implementation of the original SS-NAN method available)
 
-Data preparing:please download the LIP(single person train,val dataset, a baidu drive link is https://pan.baidu.com/s/1bpJcLjx ) and place a right place
+## Results:
 
-Some codes are borrowed from https://github.com/matterport/Mask_RCNN
+| Pixel Accuracy | Mean Accuracy | Mean IoU |
+| -------------- |:-------------:| --------:|
+| 85.8%          | 58.1%         | 47.90%   |
 
-Usage:
-Evaluation
+## Requirments:
+keras 2.0.9  
+tensorflow 1.3.0  
+python 3.5.4  
+* Anaconda=5 (not neccessary just for convenience)
 
-python LIP.py evaluate --model path_to_model.h5  --dataset  dataset_path/Single_Person --evalnum 0 (0 for all valset,other number indicate the number of images use for evaluation)
+## Data Preparation
 
-Test:
-run demo.py to run test on some specific images (main procedure is call model.detect() function) 
+Please download the [LIP dataset](https://pan.baidu.com/s/1bpJcLjx)
 
-Train
-for training
-python LIP.py train --model path_to_model.h5  --dataset  dataset_path/Single_Person  trainmode pretrain/finetune/fintune_ssloss_withdeep
+Some codes are borrowed from the [MASK RCNN Implementation](https://github.com/matterport/Mask_RCNN)
 
-three trainmode correspond to three step claimed in the paper Self-Supervised Neural Aggregation Networks for Human Parsing
+## Usage:
+### Evaluation
+'''
+python LIP.py evaluate --model path_to_model.h5  --dataset  dataset_path/Single_Person --evalnum 0
+'''
+evalnum=0 uses the whole valset. A positive evalnum indicates the number of images to use for evaluation
+ 
+### Test:
+
+run 
+```
+demo.py 
+```
+to run test on some specific images (the main procedure is to call model.detect()) 
+
+### Train
+```
+python LIP.py train --model path_to_model.h5  --dataset  dataset_path/Single_Person  trainmode pretrain
+```
+3 kinds of trainmodes available: pretrain, finetune, or fintune_ssloss_withdeep, which correspond to the 3 steps introduced in the paper Self-Supervised Neural Aggregation Networks for Human Parsing
+
 Step1:
-download pspnet_pretrainweights to the dir(link is https://pan.baidu.com/s/1sloikGH)
+download [pspnet_pretrainweights](https://pan.baidu.com/s/1sloikGH)  
+set the parameters of model.train()  
+```
+epochs=40,layers='all'   
+```
 run
+```
 python LIP.py train --model pspnet  --dataset  dataset_path/Single_Person  trainmode pretrain
-set the parameters of model.train()  epochs=40,layers='all'      
+```
+
 Step2 :
+set the parameters of model.train()  
+```
+epochs=30,layers='head'  
+```
 train the Neural Aggregation Networks
+```
 python LIP.py train --model pretain.h5(the best model generated in step1 )  --dataset  dataset_path/Single_Person  trainmode 
 finetune
-
-set the parameters of model.train()  epochs=30,layers='head'   
+```
 
 Step3 :
-train with Self-Supervised 
+set the parameters of model.train()  
+```
+epochs=30,layers='psp5+'
+```
+
+train with Self-Supervised Loss
+```
 python LIP.py train --model finetune.h5(the best model generated in step2 )  --dataset  dataset_path/Single_Person  trainmode finetune_ssloss_withdeep
+```
 
-set the parameters of model.train()  epochs=30,layers='psp5+'
-
-
-Final Pretrain_model can find here(https://pan.baidu.com/s/1nvMMl0P)
-
-results:
-Pixel Accuracy:85.8   MeanAccuracy:58.1    MeanIOU:47.90
+The final Pretrain_model can be downloaded [here](https://pan.baidu.com/s/1nvMMl0P)
 
 
-Requirments:
-keras > 2.0.9
-tensorflow>1.3.0
-python =3.5.4
-* anaconda=5 (not neccessary just for convenient)
-
-
-
-
-Reference:
-
+## References:
+```
 @inproceedings{Gong2017Look,
   title={Look into Person: Self-Supervised Structure-Sensitive Learning and a New Benchmark for Human Parsing},
   author={Gong, Ke and Liang, Xiaodan and Zhang, Dongyu and Shen, Xiaohui and Lin, Liang},
@@ -65,7 +88,6 @@ Reference:
   year={2017},
 }
 
-
 @inproceedings{Zhao2017Self,
   title={Self-Supervised Neural Aggregation Networks for Human Parsing},
   author={Zhao, Jian and Li, Jianshu and Nie, Xuecheng and Zhao, Fang and Chen, Yunpeng and Wang, Zhecan and Feng, Jiashi and Yan, Shuicheng},
@@ -73,3 +95,4 @@ Reference:
   pages={1595-1603},
   year={2017},
 }
+```
