@@ -3,6 +3,17 @@ Keras implementation for the CVPR 2017 workshop paper [Self-Supervised Neural Ag
 
 This code implement three kinds model for human parsing dataset LIP [Look into Person: Self-supervised Structure-sensitive Learning and A New Benchmark for Human Parsing](https://arxiv.org/abs/1703.05446)
 
+## Results:
+Pixel Accuracy: 85.8% 
+MeanAccuracy:   58.1%   
+MeanIoU:        47.90%
+
+## Requirments:
+keras 2.0.9
+tensorflow 1.3.0
+python 3.5.4
+* Anaconda=5 (not neccessary just for convenience)
+
 ## Data Preparation
 
 Please download the LIP(single person train, val dataset, a baidu drive link is https://pan.baidu.com/s/1bpJcLjx).
@@ -63,17 +74,6 @@ epochs=30,layers='psp5+'
 
 The final Pretrain_model can be downloaded [here](https://pan.baidu.com/s/1nvMMl0P)
 
-## Results:
-Pixel Accuracy:85.8   
-MeanAccuracy:58.1   
-MeanIoU:47.90
-
-
-## Requirments:
-keras > 2.0.9
-tensorflow>1.3.0
-python =3.5.4
-* anaconda=5 (not neccessary just for convenient)
 
 ## Reference:
 ```
@@ -84,8 +84,6 @@ python =3.5.4
   pages={6757-6765},
   year={2017},
 }
-```
-
 
 @inproceedings{Zhao2017Self,
   title={Self-Supervised Neural Aggregation Networks for Human Parsing},
@@ -94,3 +92,4 @@ python =3.5.4
   pages={1595-1603},
   year={2017},
 }
+```
