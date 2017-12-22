@@ -23,19 +23,22 @@ Some codes are borrowed from the [MASK RCNN IMPLEMENTATION](https://github.com/m
 ## Usage:
 ### Evaluation
 '''
-python LIP.py evaluate --model path_to_model.h5  --dataset  dataset_path/Single_Person --evalnum 0 (0 for all valset,other number indicate the number of images use for evaluation)
+python LIP.py evaluate --model path_to_model.h5  --dataset  dataset_path/Single_Person --evalnum 0
 '''
-
+evalnum=0 uses the whole valset. A positive evalnum indicates the number of images to use for evaluation
+ 
 ### Test:
+
+run 
+```demo.py 
 ```
-run demo.py to run test on some specific images (main procedure is call model.detect() function) 
-```
+to run test on some specific images (the main procedure is to call model.detect()) 
 
 ### Train
 ```
-python LIP.py train --model path_to_model.h5  --dataset  dataset_path/Single_Person  trainmode pretrain(or finetune, or fintune_ssloss_withdeep)
+python LIP.py train --model path_to_model.h5  --dataset  dataset_path/Single_Person  trainmode pretrain
 ```
-3 kinds of trainmode correspond to the 3 steps claimed in the paper Self-Supervised Neural Aggregation Networks for Human Parsing
+3 kinds of trainmodes available: pretrain, finetune, or fintune_ssloss_withdeep, which correspond to the 3 steps introduced in the paper Self-Supervised Neural Aggregation Networks for Human Parsing
 
 Step1:
 download [pspnet_pretrainweights](https://pan.baidu.com/s/1sloikGH)
