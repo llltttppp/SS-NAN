@@ -23,9 +23,9 @@ Some codes are borrowed from the [MASK RCNN Implementation](https://github.com/m
 
 ## Usage:
 ### Evaluation
-'''
+```
 python LIP.py evaluate --model path_to_model.h5  --dataset  dataset_path/Single_Person --evalnum 0
-'''
+```
 evalnum=0 uses the whole valset. A positive evalnum indicates the number of images to use for evaluation
  
 ### Test:
