@@ -42,7 +42,7 @@ python LIP.py train --model path_to_model.h5  --dataset  dataset_path/Single_Per
 3 kinds of trainmodes available: pretrain, finetune, or fintune_ssloss_withdeep, which correspond to the 3 steps introduced in the paper Self-Supervised Neural Aggregation Networks for Human Parsing
 
 Step1:
-download [pspnet_pretrainweights](https://pan.baidu.com/s/1sloikGH)  
+download [pspnet_pretrainweights](https://pan.baidu.com/s/1sloikGH)  [google_drive](https://drive.google.com/file/d/1MAvf1VgRd4VUNUyPoVPtLNM3BfuuFo3n/view?usp=sharing)
 set the parameters of model.train()  
 ```
 epochs=40,layers='all'   
